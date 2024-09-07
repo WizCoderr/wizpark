@@ -49,7 +49,11 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps-e2e/**/*", "apps/wizpark_backend-e2e/**/*"]
+      "exclude": [
+        "apps-e2e/**/*",
+        "apps/wizpark_backend-e2e/**/*",
+        "apps/wizpark_backend-e2e/**/*"
+      ]
     },
     {
       "plugin": "@nx/playwright/plugin",

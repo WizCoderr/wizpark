@@ -1,0 +1,26 @@
+{
+  "name": "wizpark_backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/wizpark_backend/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "wizpark_backend:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "wizpark_backend:build:development"
+        },
+        "production": {
+          "buildTarget": "wizpark_backend:build:production"
+        }
+      }
+    }
+  }
+}
