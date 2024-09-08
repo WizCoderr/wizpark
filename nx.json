@@ -52,7 +52,8 @@
       "exclude": [
         "apps-e2e/**/*",
         "apps/wizpark_backend-e2e/**/*",
-        "apps/wizpark_backend-e2e/**/*"
+        "apps/wizpark_backend-e2e/**/*",
+        "apps/wizpark_api-e2e/**/*"
       ]
     },
     {
