@@ -6,6 +6,21 @@
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/react-native?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
+## TO Set up the python models(API MODEL)
+
+to run the API MODEL run the following command
+!pip install -r requirements.txt
+make sure you have all 4 files namely main.py, utils.py, add_missing_data.py and visualisations.py
+
+
+## TO Set up the python models(Indian Model)
+
+to run the Indian Model run the following command
+!pip install -r requirements.txt
+make sure you have both the .ipynb and .py files in the same directory
+
+
+
 ## Run tasks
 
 To run the dev server for your app, use:
