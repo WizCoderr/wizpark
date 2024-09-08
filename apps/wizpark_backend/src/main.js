@@ -14,9 +14,16 @@ app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to wizpark_backend!' });
 });
 
-// Import Route 
+// Import Routes
+import user from './routes/User.routes';
+import AddPlateRoute from './routes/AddPlate.route';
+
+app.use('/user',user)
+app.use('/plates',AddPlateRoute)
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
 });
+
+
 server.on('error', console.error);
