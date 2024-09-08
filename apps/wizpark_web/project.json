@@ -1,9 +1,0 @@
-{
-  "name": "wizpark_web",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/wizpark_web/src",
-  "projectType": "application",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project wizpark_web --web",
-  "targets": {}
-}

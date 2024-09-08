@@ -1,9 +1,0 @@
-{
-  "name": "wizpark_web-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "apps/wizpark_web-e2e/src",
-  "implicitDependencies": ["wizpark_web"],
-  "// targets": "to see all targets run: nx show project wizpark_web-e2e --web",
-  "targets": {}
-}
