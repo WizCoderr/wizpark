@@ -7,7 +7,12 @@ from add_missing_data import interpolate_box, generating_updated_file
 from visualize import LicensePlateDetector
 
 
-VIDEO_DATASET = "vedios\sample.mp4"
+"""Takes sample video as data.
+
+Returns: mp4 including processed license plates, data extracted csv."""
+
+
+VIDEO_DATASET = "tests\sample.mp4"
 
 results = {}
 
@@ -29,7 +34,7 @@ while ret:
     frame_nmr += 1
     ret, frame = cap.read()
 
-    # For testing Frames have been limited to 100
+    # All frames processed here
     if ret and frame_nmr:
         results[frame_nmr] = {}
         # Detecting Vehicles
