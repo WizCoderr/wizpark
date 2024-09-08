@@ -79,9 +79,12 @@ while ret:
 extracted_data = f'test{random.randint(1, 1000)}.csv'
 write_csv(results, extracted_data)
 
+# Sorted Data and generating file
+interpolated_data = interpolate_box(extracted_data)
+updated_data = generating_updated_file(interpolated_data)
 
-extracted_data_path = f'{extracted_data}'
-visualize_file = LicensePlateDetector(csv_path = extracted_data_path, video_path = VIDEO_DATASET)
+updated_data_path = f'{updated_data}'
+visualize_file = LicensePlateDetector(csv_path = updated_data_path, video_path = VIDEO_DATASET)
 
 
 visualize_file.load_license_plates()

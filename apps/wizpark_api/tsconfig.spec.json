@@ -3,14 +3,12 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["node", "express"]
+    "types": ["jest", "node"]
   },
-  "exclude": [
+  "include": [
     "jest.config.ts",
-    "src/**/*.spec.ts",
     "src/**/*.test.ts",
-    "src/**/*.spec.js",
-    "src/**/*.test.js"
-  ],
-  "include": ["src/**/*.ts", "src/**/*.js"]
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
 }
