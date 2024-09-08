@@ -1,15 +1,19 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
-import Home from './components/Home'
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './components/Home';
 
-export class App extends Component {
-  render() {
-    return (
-      <View>
-        <Home/>
-      </View>
-    )
-  }
-}
+// Import your screens
+import SignInScreen from './screens/UserSignin';
 
-export default App
+const Stack = createNativeStackNavigator();
+
+const Navigation = () => {
+  return (
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="SignIn" component={SignInScreen} />
+    </Stack.Navigator>
+  );
+};
+
+export default Navigation;
