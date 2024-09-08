@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'wizpark_backend-e2e',
+  displayName: 'wizpark_api-e2e',
   preset: '../../jest.preset.js',
   globalSetup: '<rootDir>/src/support/global-setup.ts',
   globalTeardown: '<rootDir>/src/support/global-teardown.ts',
@@ -15,5 +15,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/wizpark_backend-e2e',
+  coverageDirectory: '../../coverage/wizpark_api-e2e',
 };

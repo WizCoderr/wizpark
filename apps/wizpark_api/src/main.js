@@ -5,7 +5,10 @@
 
 import express from 'express';
 import * as path from 'path';
-
+import connectDB from './mongoose';
+configDotenv({
+  path:'./.env'
+})
 const app = express();
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
@@ -17,13 +20,19 @@ app.get('/api', (req, res) => {
 // Import Routes
 import user from './routes/User.routes';
 import AddPlateRoute from './routes/AddPlate.route';
+import { ImageComponent } from 'react-native';
+import { configDotenv } from 'dotenv';
 
-app.use('/user',user)
-app.use('/plates',AddPlateRoute)
+app.use('/api/user',user)
+app.use('/api/plates',AddPlateRoute)
 const port = process.env.PORT || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
-});
+connectDB().then(()=>{
+  app.listen(port, () => {
+    console.log(`Listening at http://localhost:${port}/api`);
+  });
+}).catch((e)=>{
+  console.log(e);
+})
 
 
 server.on('error', console.error);

@@ -1,5 +1,5 @@
 // db.js
-const mongoose = require('mongoose');
+import { connect } from 'mongoose';
 
 const connectDB = async () => {
   try {
@@ -7,7 +7,7 @@ const connectDB = async () => {
     const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mydatabase';
 
     // Connect to MongoDB
-    await mongoose.connect(mongoURI, {
+    await connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       // Additional options can be added here
@@ -20,4 +20,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;
