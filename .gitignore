@@ -114,4 +114,5 @@ yarn-error.log
 
 **/.venv/
 **/__pycache__/
-**/vedios/
+**/tests/
+**/sort/

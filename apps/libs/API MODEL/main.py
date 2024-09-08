@@ -1,11 +1,13 @@
 from ultralytics import YOLO
 import cv2
-import util
 from sort.sort import *
 from util import get_car, read_license_plate, write_csv
 import random
+from add_missing_data import interpolate_box, generating_updated_file
+from visualize import LicensePlateDetector
 
 
+VIDEO_DATASET = "vedios\sample.mp4"
 
 results = {}
 
@@ -16,7 +18,7 @@ coco_model = YOLO('yolov8n.pt')
 license_plate_detector = YOLO('license_plate_detector.pt')
 
 # Loading sample video
-cap = cv2.VideoCapture('./sample.mp4')
+cap = cv2.VideoCapture(VIDEO_DATASET)
 
 vehicles = [2, 3, 5, 7] # These numbers represent the index of things we are using eg. car, motocycles, trucks in the COCO Dataset used in this project
 
@@ -69,8 +71,15 @@ while ret:
                                                                     'text_score': license_plate_text_score}}
 
 # Writing the results in csv
-try:
-    write_csv(results, 'test101.csv')
-except:
-    write_csv(results, f'test{random.randint(1,100)}.csv')
+extracted_data = f'test{random.randint(1, 1000)}.csv'
+write_csv(results, extracted_data)
+
+
+extracted_data_path = f'{extracted_data}'
+visualize_file = LicensePlateDetector(csv_path = extracted_data_path, video_path = VIDEO_DATASET)
+
+
+visualize_file.load_license_plates()
+visualize_file.process_video()
+
 

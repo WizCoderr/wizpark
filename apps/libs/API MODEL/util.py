@@ -14,7 +14,7 @@ dict_char_to_int = {'O': '0',
 
 dict_int_to_char = {'0': 'O',
                     '1': 'I',
-                    '3': 'J',
+                    '3': 'J', 
                     '4': 'A',
                     '6': 'G',
                     '5': 'S'}
@@ -156,3 +156,5 @@ def get_car(license_plate, vehicle_track_ids):
         return vehicle_track_ids[car_indx]
 
     return -1, -1, -1, -1, -1
+
+
