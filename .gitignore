@@ -109,3 +109,9 @@ yarn-error.log
 
 # testing
 /coverage
+
+#model 
+
+**/.venv/
+**/__pycache__/
+**/vedios/
